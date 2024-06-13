@@ -47,6 +47,12 @@
     <%= Course.where({ :department_id => @department.id }).count %>
   </dd>
 
+    <% example = Course.where({ :department_id => @department.id }) %>
+    <% example.each do |a_course| %>
+    <dd><a href="/courses/<%= a_course.id %>"><%= a_course.title %></a></dd>
+    <% end %>
+
+
 </dl>
 
 <hr>
